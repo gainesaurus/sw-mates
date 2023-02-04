@@ -8,11 +8,9 @@ export const getCharacters = async () => {
     charArr = [...charArr, ...chars.results];
     pageNum++;
   };
-  console.log(charArr);
   return charArr;
 };
 
-export const getCharacterById = (id) => fetchRequest(`people/${id}`);
 export const getHomeworldById = (id) => fetchRequest(`planets/${id}`);
 export const getStarshipById = (id) => fetchRequest(`starships/${id}`);
 export const getVehicleById = (id) => fetchRequest(`vehicles/${id}`);
