@@ -1,0 +1,27 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 40px;
+  margin: 20px;
+}
+
+select {
+  display: flex;
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+button {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+}

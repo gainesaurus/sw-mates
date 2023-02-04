@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import { getCharacters, } from './Services/ApiClient';
+
+import Spinner from './Components/Spinner/Spinner';
+
+import styles from './App.module.css';
+import React from 'react';
+
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [allCharacters, setAllCharacters] = useState([]);
+
+  useEffect(() => {
+    getCharacters()
+    .then(chars => setAllCharacters(chars))
+    .then(setIsLoading(false));
+  }, [])
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    !isLoading ? (
+      <div className={styles.App}>
+        <div className={styles.container}>
+          <select>
+            {allCharacters.map(char =>
+              <option key={char.url} value={char}>
+                {char.name}
+              </option>
+            )}
+          </select>
+          <select>
+            {allCharacters.map(char =>
+              <option key={char.url} value={char}>
+                {char.name}
+              </option>
+            )}
+          </select>
+          <button>Compare</button>
+        </div>
+      </div>
+    )
+    :
+    <Spinner />
   );
 }
 
