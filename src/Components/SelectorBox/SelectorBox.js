@@ -10,19 +10,21 @@ const SelectorBox = (props) => {
 
   return (
     <section className={styles.container}>
-      <Select styles={selectStyle}
+      <Select
+        styles={selectStyle}
         defaultValue={props.firstCharacter}
         onChange={props.setFirstCharacter}
         options={props.allCharacters}
         placeholder='Search Characters'>
       </Select>
-      <Select styles={selectStyle}
+      
+      <Select
+        styles={selectStyle}
         defaultValue={props.otherCharacter}
         onChange={props.setOtherCharacter}
         options={props.allCharacters}
         placeholder='Search Characters'>
       </Select>
-      <button>Compare</button>
     </section>
   )
 }

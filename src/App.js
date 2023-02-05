@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCharacters, } from './Services/ApiClient';
 
 import SelectorBox from './Components/SelectorBox/SelectorBox';
+import SharedLists from './Components/SharedLists/SharedLists';
 import Spinner from './Components/Spinner/Spinner';
 
 import styles from './App.module.css';
@@ -19,7 +20,7 @@ function App() {
     .then(chars => {
       setAllCharacters(chars.map(char => {return { url: char.url, label: char.name, starships: char.starships, vehicles: char.vehicles}}))
       setIsLoading(false)});
-  }, []);
+  }, [SelectorBox]);
 
 
   return (
@@ -32,13 +33,23 @@ function App() {
         otherCharacter={otherCharacter}
         setOtherCharacter={setOtherCharacter}
       />
-        {firstCharacter ? <h2>{firstCharacter.label}</h2>: null}
-        {otherCharacter ? <h2>{otherCharacter.label}</h2>: null}
-        {/* <ListContextProv>
-          <SharedList list="planets" />
-          <SharedList list="starships" />
-          <SharedList list="vehicles" />
-        </ListContextProv> */}
+      <section className={styles.compContainer}>
+        <div className={styles.character}>
+          {firstCharacter ? <h2>{firstCharacter.label}</h2> : null}
+        </div>
+        <div className={styles.listContainer}>
+          {firstCharacter && otherCharacter ?
+          <SharedLists
+            firstCharacter={firstCharacter}
+            otherCharacter={otherCharacter}
+          />
+          :
+          null}
+        </div>
+        <div className={styles.character}>
+          {otherCharacter ? <h2>{otherCharacter.label}</h2> : null}
+        </div>
+      </section>
       </div>
     )
     :

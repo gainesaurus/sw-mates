@@ -11,6 +11,17 @@ export const getCharacters = async () => {
   return charArr;
 };
 
+export const getPlanets = async () => {
+  let planetArr = [];
+  let pageNum = 1;
+  while (pageNum < 7) {
+    let planets = await fetchRequest(`planets/?page=${pageNum}`)
+    planetArr = [...planetArr, ...planets.results];
+    pageNum++;
+  };
+  return planetArr;
+};
+
 export const getHomeworldById = (id) => fetchRequest(`planets/${id}`);
 export const getStarshipById = (id) => fetchRequest(`starships/${id}`);
 export const getVehicleById = (id) => fetchRequest(`vehicles/${id}`);

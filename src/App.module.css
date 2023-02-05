@@ -3,6 +3,45 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 400px;
+  width: 100%;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+.compContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-width: 200px;
+}
+
+.character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid red;
+  width: 20%;
+  min-width: 100px;
+  height: fit-content;
+  word-wrap: break-word;
+}
+
+.listContainer {
+  display: flex;
+  width: 40%;
+  justify-content: center;
 }
 
 h2 {
