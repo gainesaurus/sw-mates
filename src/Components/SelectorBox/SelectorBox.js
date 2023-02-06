@@ -10,6 +10,7 @@ const SelectorBox = (props) => {
 
   return (
     <section className={styles.container}>
+      <h4>Choose Two Characters:</h4>
       <Select
         styles={selectStyle}
         defaultValue={props.firstCharacter}

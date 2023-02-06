@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top:0;
+  justify-content: center;
+  background-color: #000000;
+  height: 70px;
+  width: 100vw;
+  min-width: 500px;
+  color: white;
+  box-shadow: 1px 1px 5px rgba(200, 0, 0, 0.7);
+  z-index: 200;
+}
+
+h1 {
+  display: flex;
+  margin: 0 0 0 20px;
+}
+
+p {
+  margin: 0 0 0 20px;
+}
