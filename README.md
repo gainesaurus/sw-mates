@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+SW-Samesies!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was a coding assessment using the Star Wars API (swapi) to compare two characters using React in the front-end.
 
 ## Available Scripts
 
