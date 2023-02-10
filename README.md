@@ -1,4 +1,4 @@
-SW-Samesies!
+##SW-Samesies!
 
 This project was a coding assessment using the Star Wars API (swapi) to compare two characters using React in the front-end.
 
